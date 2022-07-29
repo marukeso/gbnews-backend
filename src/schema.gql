@@ -18,6 +18,22 @@ type LoginResponse {
 type Item {
   id: ID!
   name: String!
+  startDate: DateTime
+  endDate: DateTime
+  basePrice: String
+  status: Status!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+enum Status {
+  LIVE
+  UPCOMING
+  IC
+  ENDED
 }
 
 type Query {
@@ -124,11 +140,84 @@ input ItemWhereInput {
   NOT: [ItemWhereInput!]
   id: StringFilter
   name: StringFilter
+  startDate: DateTimeNullableFilter
+  endDate: DateTimeNullableFilter
+  basePrice: StringNullableFilter
+  status: EnumStatusFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input EnumStatusFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusFilter
+}
+
+input NestedEnumStatusFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusFilter
 }
 
 input ItemOrderByWithRelationInput {
   id: SortOrder
   name: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+  basePrice: SortOrder
+  status: SortOrder
 }
 
 input ItemWhereUniqueInput {
@@ -139,6 +228,10 @@ input ItemWhereUniqueInput {
 enum ItemScalarFieldEnum {
   id
   name
+  startDate
+  endDate
+  basePrice
+  status
   createdAt
   updatedAt
 }
@@ -163,4 +256,8 @@ input LoginUserInput {
 input ItemCreateInput {
   id: String
   name: String!
+  startDate: DateTime
+  endDate: DateTime
+  basePrice: String
+  status: Status
 }

@@ -11,6 +11,18 @@ export class ItemCountAggregateInput {
     @Field(() => Boolean, {nullable:true})
     name?: true;
 
+    @Field(() => Boolean, {nullable:true})
+    startDate?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    endDate?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    basePrice?: true;
+
+    @Field(() => Boolean, {nullable:true})
+    status?: true;
+
     @HideField()
     createdAt?: true;
 

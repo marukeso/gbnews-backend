@@ -15,6 +15,18 @@ export class ItemOrderByWithAggregationInput {
     @Field(() => SortOrder, {nullable:true})
     name?: keyof typeof SortOrder;
 
+    @Field(() => SortOrder, {nullable:true})
+    startDate?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    endDate?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    basePrice?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    status?: keyof typeof SortOrder;
+
     @HideField()
     createdAt?: keyof typeof SortOrder;
 
