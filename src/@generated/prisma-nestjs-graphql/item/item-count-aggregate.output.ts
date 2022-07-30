@@ -13,6 +13,9 @@ export class ItemCountAggregate {
     name!: number;
 
     @Field(() => Int, {nullable:false})
+    imageUrl!: number;
+
+    @Field(() => Int, {nullable:false})
     startDate!: number;
 
     @Field(() => Int, {nullable:false})

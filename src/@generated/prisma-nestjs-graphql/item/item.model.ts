@@ -13,6 +13,9 @@ export class Item {
     @Field(() => String, {nullable:false})
     name!: string;
 
+    @Field(() => String, {nullable:false})
+    imageUrl!: string;
+
     @Field(() => Date, {nullable:true})
     startDate!: Date | null;
 

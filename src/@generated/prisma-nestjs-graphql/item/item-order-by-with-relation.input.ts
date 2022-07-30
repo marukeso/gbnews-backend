@@ -13,6 +13,9 @@ export class ItemOrderByWithRelationInput {
     name?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    imageUrl?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     startDate?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})

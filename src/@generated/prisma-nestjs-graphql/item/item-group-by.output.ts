@@ -15,6 +15,9 @@ export class ItemGroupBy {
     @Field(() => String, {nullable:false})
     name!: string;
 
+    @Field(() => String, {nullable:false})
+    imageUrl!: string;
+
     @Field(() => Date, {nullable:true})
     startDate?: Date | string;
 

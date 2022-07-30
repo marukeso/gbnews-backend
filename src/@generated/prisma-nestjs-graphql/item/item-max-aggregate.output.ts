@@ -12,6 +12,9 @@ export class ItemMaxAggregate {
     @Field(() => String, {nullable:true})
     name?: string;
 
+    @Field(() => String, {nullable:true})
+    imageUrl?: string;
+
     @Field(() => Date, {nullable:true})
     startDate?: Date | string;
 

@@ -12,6 +12,9 @@ export class ItemMinAggregateInput {
     name?: true;
 
     @Field(() => Boolean, {nullable:true})
+    imageUrl?: true;
+
+    @Field(() => Boolean, {nullable:true})
     startDate?: true;
 
     @Field(() => Boolean, {nullable:true})

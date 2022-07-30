@@ -49,6 +49,8 @@ model Item {
   id        String    @id @default(uuid())
   /// @Validator.IsNotEmpty()
   name      String    @unique
+  /// @Validator.IsNotEmpty()
+  imageUrl  String
   startDate DateTime?
   endDate   DateTime?
   basePrice String?

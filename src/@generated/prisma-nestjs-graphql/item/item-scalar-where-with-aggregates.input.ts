@@ -25,6 +25,9 @@ export class ItemScalarWhereWithAggregatesInput {
     @Field(() => StringWithAggregatesFilter, {nullable:true})
     name?: StringWithAggregatesFilter;
 
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    imageUrl?: StringWithAggregatesFilter;
+
     @Field(() => DateTimeNullableWithAggregatesFilter, {nullable:true})
     startDate?: DateTimeNullableWithAggregatesFilter;
 

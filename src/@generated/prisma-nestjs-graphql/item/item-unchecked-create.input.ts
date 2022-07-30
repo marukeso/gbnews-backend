@@ -14,6 +14,10 @@ export class ItemUncheckedCreateInput {
     @Validator.IsNotEmpty()
     name!: string;
 
+    @Field(() => String, {nullable:false})
+    @Validator.IsNotEmpty()
+    imageUrl!: string;
+
     @Field(() => Date, {nullable:true})
     startDate?: Date | string;
 

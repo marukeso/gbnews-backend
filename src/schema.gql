@@ -18,6 +18,7 @@ type LoginResponse {
 type Item {
   id: ID!
   name: String!
+  imageUrl: String!
   startDate: DateTime
   endDate: DateTime
   basePrice: String
@@ -140,6 +141,7 @@ input ItemWhereInput {
   NOT: [ItemWhereInput!]
   id: StringFilter
   name: StringFilter
+  imageUrl: StringFilter
   startDate: DateTimeNullableFilter
   endDate: DateTimeNullableFilter
   basePrice: StringNullableFilter
@@ -214,6 +216,7 @@ input NestedEnumStatusFilter {
 input ItemOrderByWithRelationInput {
   id: SortOrder
   name: SortOrder
+  imageUrl: SortOrder
   startDate: SortOrder
   endDate: SortOrder
   basePrice: SortOrder
@@ -228,6 +231,7 @@ input ItemWhereUniqueInput {
 enum ItemScalarFieldEnum {
   id
   name
+  imageUrl
   startDate
   endDate
   basePrice
@@ -256,6 +260,7 @@ input LoginUserInput {
 input ItemCreateInput {
   id: String
   name: String!
+  imageUrl: String!
   startDate: DateTime
   endDate: DateTime
   basePrice: String

@@ -16,6 +16,9 @@ export class ItemUpdateManyMutationInput {
     @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
     name?: StringFieldUpdateOperationsInput;
 
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    imageUrl?: StringFieldUpdateOperationsInput;
+
     @Field(() => NullableDateTimeFieldUpdateOperationsInput, {nullable:true})
     startDate?: NullableDateTimeFieldUpdateOperationsInput;
 

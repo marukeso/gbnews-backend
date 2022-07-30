@@ -3,6 +3,7 @@ import { registerEnumType } from '@nestjs/graphql';
 export enum ItemScalarFieldEnum {
     id = "id",
     name = "name",
+    imageUrl = "imageUrl",
     startDate = "startDate",
     endDate = "endDate",
     basePrice = "basePrice",

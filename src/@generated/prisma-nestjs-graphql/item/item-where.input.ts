@@ -25,6 +25,9 @@ export class ItemWhereInput {
     @Field(() => StringFilter, {nullable:true})
     name?: StringFilter;
 
+    @Field(() => StringFilter, {nullable:true})
+    imageUrl?: StringFilter;
+
     @Field(() => DateTimeNullableFilter, {nullable:true})
     startDate?: DateTimeNullableFilter;
 
