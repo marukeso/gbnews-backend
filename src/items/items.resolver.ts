@@ -18,6 +18,11 @@ export class ItemsResolver {
     return this.itemsService.findMany();
   }
 
+  @Query(() => Item)
+  findById(@Args('id', { type: () => String }) id: string) {
+    return this.itemsService.findById(id);
+  }
+
   @Mutation(() => Item)
   async createItem(@Args() args: CreateOneItemArgs) {
     return this.itemsService.createItem(args);

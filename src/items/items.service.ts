@@ -17,6 +17,12 @@ export class ItemsService {
     return this.prisma.item.findMany();
   }
 
+  async findById(id: string): Promise<Item | null> {
+    return this.prisma.item.findUnique({
+      where: { id },
+    });
+  }
+
   async findUnique(args: FindUniqueItemArgs): Promise<Item | null> {
     return this.prisma.item.findUnique(args);
   }
