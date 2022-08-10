@@ -4,6 +4,7 @@ import { Item } from 'src/@generated/prisma-nestjs-graphql/item/item.model';
 import { FindFirstItemArgs } from 'src/@generated/prisma-nestjs-graphql/item/find-first-item.args';
 import { CreateOneItemArgs } from 'src/@generated/prisma-nestjs-graphql/item/create-one-item.args';
 import { FindUniqueItemArgs } from 'src/@generated/prisma-nestjs-graphql/item/find-unique-item.args';
+import { FindManyItemArgs } from '../@generated/prisma-nestjs-graphql/item/find-many-item.args';
 
 @Injectable()
 export class ItemsService {
@@ -15,6 +16,10 @@ export class ItemsService {
 
   async findMany(): Promise<Item[]> {
     return this.prisma.item.findMany();
+  }
+
+  async itemsByCaterogy(args: FindManyItemArgs): Promise<Item[]> {
+    return this.prisma.item.findMany(args);
   }
 
   async findById(id: string): Promise<Item | null> {

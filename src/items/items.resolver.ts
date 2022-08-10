@@ -3,6 +3,7 @@ import { Item } from 'src/@generated/prisma-nestjs-graphql/item/item.model';
 import { CreateOneItemArgs } from 'src/@generated/prisma-nestjs-graphql/item/create-one-item.args';
 import { ItemsService } from 'src/items/items.service';
 import { FindFirstItemArgs } from 'src/@generated/prisma-nestjs-graphql/item/find-first-item.args';
+import { FindManyItemArgs } from '../@generated/prisma-nestjs-graphql/item/find-many-item.args';
 
 @Resolver(() => Item)
 export class ItemsResolver {
@@ -16,6 +17,11 @@ export class ItemsResolver {
   @Query(() => [Item], { name: 'items' })
   findMany() {
     return this.itemsService.findMany();
+  }
+
+  @Query(() => [Item])
+  itemsByCategory(@Args() args: FindManyItemArgs) {
+    return this.itemsService.itemsByCaterogy(args);
   }
 
   @Query(() => Item)
