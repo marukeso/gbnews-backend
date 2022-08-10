@@ -1,6 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { Status } from '../prisma/status.enum';
+import { Category } from '../prisma/category.enum';
 import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
@@ -26,6 +27,9 @@ export class ItemMaxAggregate {
 
     @Field(() => Status, {nullable:true})
     status?: keyof typeof Status;
+
+    @Field(() => Category, {nullable:true})
+    category?: keyof typeof Category;
 
     @HideField()
     createdAt?: Date | string;

@@ -2,6 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
 import { Status } from '../prisma/status.enum';
+import { Category } from '../prisma/category.enum';
 import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
@@ -27,6 +28,9 @@ export class Item {
 
     @Field(() => Status, {nullable:false,defaultValue:'LIVE'})
     status!: keyof typeof Status;
+
+    @Field(() => Category, {nullable:false})
+    category!: keyof typeof Category;
 
     @HideField()
     createdAt!: Date;

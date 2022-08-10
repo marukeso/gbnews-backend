@@ -23,6 +23,7 @@ type Item {
   endDate: DateTime
   basePrice: String
   status: Status!
+  category: Category!
 }
 
 """
@@ -35,6 +36,12 @@ enum Status {
   UPCOMING
   IC
   ENDED
+}
+
+enum Category {
+  KEYCAPS
+  KEYBOARDS
+  SWITCHES
 }
 
 type Query {
@@ -147,6 +154,7 @@ input ItemWhereInput {
   endDate: DateTimeNullableFilter
   basePrice: StringNullableFilter
   status: EnumStatusFilter
+  category: EnumCategoryFilter
 }
 
 input DateTimeNullableFilter {
@@ -214,6 +222,20 @@ input NestedEnumStatusFilter {
   not: NestedEnumStatusFilter
 }
 
+input EnumCategoryFilter {
+  equals: Category
+  in: [Category!]
+  notIn: [Category!]
+  not: NestedEnumCategoryFilter
+}
+
+input NestedEnumCategoryFilter {
+  equals: Category
+  in: [Category!]
+  notIn: [Category!]
+  not: NestedEnumCategoryFilter
+}
+
 input ItemOrderByWithRelationInput {
   id: SortOrder
   name: SortOrder
@@ -222,6 +244,7 @@ input ItemOrderByWithRelationInput {
   endDate: SortOrder
   basePrice: SortOrder
   status: SortOrder
+  category: SortOrder
 }
 
 input ItemWhereUniqueInput {
@@ -237,6 +260,7 @@ enum ItemScalarFieldEnum {
   endDate
   basePrice
   status
+  category
   createdAt
   updatedAt
 }
@@ -266,4 +290,5 @@ input ItemCreateInput {
   endDate: DateTime
   basePrice: String
   status: Status
+  category: Category!
 }

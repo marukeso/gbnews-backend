@@ -1,6 +1,7 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { Status } from '../prisma/status.enum';
+import { Category } from '../prisma/category.enum';
 import { HideField } from '@nestjs/graphql';
 import { ItemCountAggregate } from './item-count-aggregate.output';
 import { ItemMinAggregate } from './item-min-aggregate.output';
@@ -29,6 +30,9 @@ export class ItemGroupBy {
 
     @Field(() => Status, {nullable:false})
     status!: keyof typeof Status;
+
+    @Field(() => Category, {nullable:false})
+    category!: keyof typeof Category;
 
     @HideField()
     createdAt!: Date | string;

@@ -8,6 +8,7 @@ export enum ItemScalarFieldEnum {
     endDate = "endDate",
     basePrice = "basePrice",
     status = "status",
+    category = "category",
     createdAt = "createdAt",
     updatedAt = "updatedAt"
 }

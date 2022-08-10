@@ -27,6 +27,9 @@ export class ItemCountAggregate {
     @Field(() => Int, {nullable:false})
     status!: number;
 
+    @Field(() => Int, {nullable:false})
+    category!: number;
+
     @HideField()
     createdAt!: number;
 

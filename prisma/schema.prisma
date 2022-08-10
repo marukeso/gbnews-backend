@@ -56,7 +56,8 @@ model Item {
   basePrice String?
   /// @Validator.IsNotEmpty()
   status    Status    @default(LIVE)
-  // categories
+  /// @Validator.IsNotEmpty()
+  category  Category
   // vendors
 
   /// @HideField({ input: true, output: true })
@@ -70,4 +71,10 @@ enum Status {
   UPCOMING
   IC
   ENDED
+}
+
+enum Category {
+  KEYCAPS
+  KEYBOARDS
+  SWITCHES
 }

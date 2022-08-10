@@ -4,6 +4,7 @@ import { StringWithAggregatesFilter } from '../prisma/string-with-aggregates-fil
 import { DateTimeNullableWithAggregatesFilter } from '../prisma/date-time-nullable-with-aggregates-filter.input';
 import { StringNullableWithAggregatesFilter } from '../prisma/string-nullable-with-aggregates-filter.input';
 import { EnumStatusWithAggregatesFilter } from '../prisma/enum-status-with-aggregates-filter.input';
+import { EnumCategoryWithAggregatesFilter } from '../prisma/enum-category-with-aggregates-filter.input';
 import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregates-filter.input';
 import { HideField } from '@nestjs/graphql';
 
@@ -39,6 +40,9 @@ export class ItemScalarWhereWithAggregatesInput {
 
     @Field(() => EnumStatusWithAggregatesFilter, {nullable:true})
     status?: EnumStatusWithAggregatesFilter;
+
+    @Field(() => EnumCategoryWithAggregatesFilter, {nullable:true})
+    category?: EnumCategoryWithAggregatesFilter;
 
     @HideField()
     createdAt?: DateTimeWithAggregatesFilter;

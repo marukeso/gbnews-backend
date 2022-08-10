@@ -27,6 +27,9 @@ export class ItemCountOrderByAggregateInput {
     @Field(() => SortOrder, {nullable:true})
     status?: keyof typeof SortOrder;
 
+    @Field(() => SortOrder, {nullable:true})
+    category?: keyof typeof SortOrder;
+
     @HideField()
     createdAt?: keyof typeof SortOrder;
 

@@ -4,6 +4,7 @@ import { StringFilter } from '../prisma/string-filter.input';
 import { DateTimeNullableFilter } from '../prisma/date-time-nullable-filter.input';
 import { StringNullableFilter } from '../prisma/string-nullable-filter.input';
 import { EnumStatusFilter } from '../prisma/enum-status-filter.input';
+import { EnumCategoryFilter } from '../prisma/enum-category-filter.input';
 import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { HideField } from '@nestjs/graphql';
 
@@ -39,6 +40,9 @@ export class ItemWhereInput {
 
     @Field(() => EnumStatusFilter, {nullable:true})
     status?: EnumStatusFilter;
+
+    @Field(() => EnumCategoryFilter, {nullable:true})
+    category?: EnumCategoryFilter;
 
     @HideField()
     createdAt?: DateTimeFilter;

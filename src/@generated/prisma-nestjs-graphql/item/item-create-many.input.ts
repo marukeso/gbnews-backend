@@ -2,6 +2,7 @@ import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import * as Validator from 'class-validator';
 import { Status } from '../prisma/status.enum';
+import { Category } from '../prisma/category.enum';
 import { HideField } from '@nestjs/graphql';
 
 @InputType()
@@ -30,6 +31,10 @@ export class ItemCreateManyInput {
     @Field(() => Status, {nullable:true})
     @Validator.IsNotEmpty()
     status?: keyof typeof Status;
+
+    @Field(() => Category, {nullable:false})
+    @Validator.IsNotEmpty()
+    category!: keyof typeof Category;
 
     @HideField()
     createdAt?: Date | string;
